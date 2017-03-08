@@ -1,9 +1,16 @@
 var path = require('path');
 
-module.exports = {
+const config = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {test: /\.(js|jsx)$/, use: 'babel-loader'}
+    ]
   }
 };
+
+module.exports = config;
