@@ -9,7 +9,8 @@ const config = {
   },
   module: {
     rules: [
-      {test: /\.(js|jsx)$/, use: 'babel-loader'}
+      { test: /\.(js|jsx)$/, use: 'babel-loader' },
+      { test: /\.(ttf|otf|png|jpg|mp4)$/, loader: 'url-loader?limit=1000000' }
     ]
   },
   devServer: {
